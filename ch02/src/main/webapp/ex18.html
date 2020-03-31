@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>종속 선택자 and JS</title>
+<style type="text/css">
+	input					{ background-color: #fff ; border:2px solid #03CF5D; outline: none }
+	input#user-id			{ background-color: #EB9095 }
+	input#user-id.focused	{ background-color: #E1E6F6 }
+</style>
+<script type="text/javascript">
+function changeBackground(input) {
+	input.className="focused";
+}
+</script>
+</head>
+<body>
+	<form>
+		<input type="text" 
+		       onFocus='changeBackground(this)' 
+		       onBlur='this.className=""' 
+		       class="" 
+		       id='user-id' />
+		<br/>
+		<input type="text" class="" id='' />
+	</form>
+</body>
+</html>

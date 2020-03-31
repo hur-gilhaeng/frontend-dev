@@ -4,21 +4,26 @@
 <meta charset="utf-8">
 <title>하위 선택자</title>
 <style type="text/css">
+
+a:link { text-decoration: none; }
+a:hover { text-decoration: underline; }
+a:visited { text-decoration: none; }
+a:active { text-decoration: none; }
+
 body {
 	font-family: Verdana, Geneva, sans-serif;
 	font-size: 0.75em;
 	color: #333;
 }
 
-p {
-	line-height:2em;
-}
+ul { list-style-type:none }
+
+p { line-height:2em; }
 
 
 p a em{
 	color: #06F;
 	font-style: normal;
-
 }
 
 .right_box, .left_box {
@@ -35,7 +40,12 @@ p a em{
 	float:left;
 }
 
+p a		 { font-weight: bold; color: #F60 }
 
+.list1 a { font-weight: bold; color: #F00; text-decoration: underline; }
+
+.list2 a { font-weight: bold; color: #39F; text-decoration: none; }
+/* 같은 수준이라면 뒤에 있는 명령이 앞의 명령을 덮는다 */
 
 </style>
 </head>
@@ -49,17 +59,18 @@ p a em{
 두번째로 공항부터 시작해서 관광객들이 접하는 모든 곳에서 일관된 디자인의 통일성과 상징성이 필요하다.
 글꼴 자체의 이름이 제주를 상징하는 것이 되면, 사용자들이 이 글꼴을 사용하면서도 제주의 이미지가 자연스럽게 각인되지 않을까? 하는 생각 등등이 종합되어
 <a href="#"> 산돌 <em>커뮤니케이션</em></a>을 만나 구체적인 프로젝트를 하나씩 실현해 보기 시작했고, 다행이 이렇게 현실적인 결과물이 나오게 되었습니다. </p>
-
  
     <ul class="list1"> 
         <li><a href="#">제주글꼴의 가장 큰 특징</a></li>
         <li>제주어를 표현할 수 있어야 한다.</li>
-            <ul class="list2"> 
+        <li>
+            <ul class="list2">
                 <li><a href="#">제주 사투리(고어)를 표현할 수 있어야 한다.</a></li>
                 <li>제주 글꼴이라는 느낌이 줘야 한다.</li>                            
                 <li>기본 고딕체가 있어야 한다.</li>
                 <li>기본 명조체가 있어야 한다.</li>
             </ul>
+        </li>
         <li>시대적인 요구에 맞춘 디자인이어야 한다.</li>
         <li>PC와 맥 둘 다 사용 가능해야 한다.</li>
     </ul>
