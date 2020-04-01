@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>nhead</title>
+<style type="text/css">
+* 		{ margin: 0; padding: 0}
+
+.header {
+	width: 630px;
+	height: 100px;
+	margin: 50px auto 0;
+}
+
+.header .logo, .header .search-box {
+	float: left;
+}
+
+.header .logo {
+	width: 200px;
+	height: 50px;
+	font-size: 0;
+	text-indent: 110%;
+	overflow: hidden;
+	background: url('images/sp_search.svg') no-repeat -2px -3px;
+}
+
+.header .search-box {
+	border:3px solid #03CF5D;
+	width: 400px;
+	height: 42px;
+	margin-left:20px;
+}  
+
+.search-box{
+	margin-top: 5px;
+}
+
+.search-box a, .search-box button {
+	display: block;
+	float: right;
+	font-size: 0;
+	text-indent: 110%;
+	overflow: hidden;
+}
+
+.search-box a{
+	margin-bottom: 8px;
+	margin-top: 8px;
+}
+
+.search-box button {
+	width: 42px;
+	height: 42px;
+	border: 0;
+	cursor: pointer;
+	background: #03CF5D url('images/sp_search.svg') no-repeat 10px -50px;
+}
+.search-box #dropdown{
+	width: 21px;
+	height: 26px;
+	background: url('images/sp_search.svg') no-repeat -80px -47px;
+}
+.search-box #keyboard{
+	width: 30px;
+	height: 26px;
+	background: url('images/sp_search.svg') no-repeat -27px -51px;
+}
+.search-box input{
+	margin-bottom: 8px;
+	margin-top: 8px;
+	margin-left: 5px;
+	border: 0;
+	width: 300px;
+	height: 26px;
+	display: block;
+	float: left;
+	/* font: 400 13.3333px Arial; */
+	font-size: 18px;
+	/* font-family: Dotum,'돋움',Helvetica,"Apple SD Gothic Neo",sans-serif; */
+}
+.search-box input:focus{
+	outline: none;
+}
+.search-box button:focus{
+	outline: none;
+}
+</style>
+</head>
+<body>
+	<div class="header">
+		<h1 class='logo'>네이버</h1>
+		<div class="search-box">
+			<input type="text" />
+			<button onclick="location.href='nhead.html'">돋보기</button> 
+			<a href="#2" id='dropdown'>드롭다운</a>
+			<a href="#1" id='keyboard'>키보드</a> 
+		</div>
+	</div>
+</body>
+</html>
