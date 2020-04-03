@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<script>
+// 변수의 범위
+// 1. 자바스크립트는 자바와 같은 블록 범위는 없지만 블록 내에서 var 사용 여부에 영향을 받는다.
+// 2. 블록안에서 var를 사용하게 되면 local 범위가 발생한다. (지역 변수가 된다.)
+var i = 10;
+var f = function(){
+	var i = 20;
+	var j = 100;
+	console.log(i);
+	i = i - 1;
+}
+
+f();
+console.log(i);
+// console.log(j); // 오류발생
+
+</script>
+<body>
+	<h1>변수 범위</h1>
+</body>
+</html>
