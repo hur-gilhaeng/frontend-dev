@@ -57,6 +57,7 @@ ul, ol { list-style-type:none; }
 	window.onload = function(){
 		// div : class='tab-box'
 		var divTabBox = document.getElementsByClassName('tab-box')[0];
+		console.log(divTabBox.childNodes);
 		var ulTabBox = divTabBox.childNodes[1];
 		var liTabs = ulTabBox.getElementsByTagName('li');
 		
