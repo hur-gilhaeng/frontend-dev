@@ -16,6 +16,7 @@ window.addEventListener('load', function(){
 	intervalId = setInterval(function(){
 		if(index >= rects.length){
 			clearInterval(intervalId);
+			return;
 		}
 		rects[index++].show();
 	}, 1000);
