@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+window.addEventListener("load", function(){
+	
+	var img = document.createElement('img');
+	img.src = 'https://newsimg.hankookilbo.com/2019/04/29/201904291390027161_3.jpg';
+	img.width = 400;
+	img.alt = '고양이는 고양고양';
+	img.title = '고양이는 고양고양';
+	img["data-name"] = '고양이';
+	
+	setTimeout(function(){
+		document.body.appendChild(img);
+	},2000);
+});
+</script>
+</head>
+<body>
+	<h1> HTMLElement 속성 조작하기 </h1>	
+</body>
+</html>
