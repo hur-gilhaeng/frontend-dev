@@ -45,6 +45,10 @@
 		document.getElementById("header-1").onclick = function(){
 			console.log("Event Model 0 - Basic")
 		}
+		
+		document.getElementById("header-1").onclick = function(){
+			console.log("Event Model 0 - Basic!!!!!")
+		} // 같이 실행되지 않고 덮어 쓰기 된다.
 
 		document.getElementById("header-2").addEventListener("click", function(){
 			console.log("Event Model 2")
