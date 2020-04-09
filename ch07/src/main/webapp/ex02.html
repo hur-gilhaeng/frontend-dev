@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>ex02</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript" src="jquery/jquery-3.4.1.js"></script>
+<script>
+
+var $obj1 = jQuery('#header');
+console.log("o1: "+$obj1.length);
+// 위 구문은 DOM이 완성되기 전에 실행하여 객체를 찾지 못한다...
+
+window.addEventListener('load',function(){
+	var $obj = jQuery('#header');
+	console.log($obj.length);
+});
+
+jQuery(document).ready(function(){
+	var $obj = jQuery('#header');
+	console.log($obj.length);
+});
+
+$(document).ready(function(){
+	var $obj = $('#header');
+	console.log($obj.length);
+});
+
+/* 추천: 대체적으로, jQuery를 사용하는 JavaScript 코드는 이 함수가 entry point가 된다. */
+/* 해당 구문을 아래처럼 2구문으로 분리할 수 있다.
+$(function(){
+	var $obj = jQuery('#header');
+	console.log($obj.length);
+});
+ */
+var selectHeader = function(){
+	var $obj = $('#header');
+	console.log($obj.length);
+}
+
+$(function(){
+	selectHeader();
+});
+
+</script>
+</head>
+<body>
+	<h1 id='header'>jQuery로 Element를 선택할 시점</h1>
+</body>
+<script>
+// body 뒤에 script tag를 넣어 실행할 수 있지만 권장하지 않음...
+// body의 DOM tree 구성이 복잡하다면 DOM이 완성되기 전에 
+// 해당하는 script구문의 실행될 수 있기 때문이다.
+var $obj2 = jQuery('#header');
+console.log("o2: "+$obj2.length);
+</script>
+</html>
+ 
