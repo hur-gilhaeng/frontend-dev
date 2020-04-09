@@ -16,7 +16,7 @@
  2. Event Attribute: DOM Event Model Level 0, onload, onclick
  3. Event Listener: DOM Event model Level 2, function(){}
  4. Event Model : DOM의 HTMLElement의 Event Handler를 설정하는 방법에 대한 표준
- 	- DOM Event Model Level 0
+ 	- DOM Level 0 Event Model 
  	  : Inline Event Model
  	    = 태그 안에 onclick='자바스크립트 코드' 넣는 것... X(웹표준 위배)
  	    
@@ -24,17 +24,17 @@
  	    = element.onclick = function() {....}
  	    = 문제점이 이벤트 처리 핸들러를 하나밖에 세팅 못하다는 단점
  	    
- 	- DOM Event Model Level 2
- 	  - Microsoft Internet Explorer(8이하) : attachEvent, detachEvent  
+ 	- DOM Level 2 Event Model 
+ 	  - Microsoft Internet Explorer(8 이하) : attachEvent, detachEvent  
  	  - Standard Event Mode : addEventListener, removeEventListener
  */
 /*	
-      // Native
- 	  var element
- 	  if(){
- 		  
+      // Native(pure, vanilla) JavaScript
+ 	  var element = document.getElementById('id');
+ 	  if(isIE){
+ 		 element.attachEvent("click", function(){...});
  	  }else{
- 		  
+ 		 element.addEventListener("click", function(){...});
  	  }
  	  
  	  // jQuery

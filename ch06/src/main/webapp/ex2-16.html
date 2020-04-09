@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+// Event Propagation(Event Bubbling)
+// 득정 엘리먼트에서 이벤트가 발생했을 때, 그 이벤드가 상위 엘리먼트로 전달되어 가는 것
+// ie8    : outer-div > inner-div > header > text
+// others : outer-div < inner-div < header < text
+window.addEventListener('load',function(){
+	document.getElementById('outer-div').addEventListener('click', function(event){
+		console.log('outer-div');
+	});
+	
+	document
+		.getElementById('inner-div')
+			.addEventListener('click', function(e){
+		// cross browser (IE8 이하)
+		var event = e || window.event;
+		
+		// prevent propagation (bubbling)
+		event.cancelBubble = true;                         // IE8이하
+		event.stopPropagation && event.stopPropagation();  // others
+		
+		console.log('inner-div');
+	});
+	
+	document.getElementById('header').addEventListener('click', function(event){
+		console.log('header');
+	});
+	
+	document.getElementById('test').addEventListener('click', function(event){
+		console.log('test');
+	});
+	
+});
+
+</script>
+</head>
+<body>
+	<div id='outer-div'>
+		<div id='inner-div'>
+			<h1 id='header'>
+				<span id='test'>text</span>
+			</h1>
+		</div>
+	</div>
+</body>
+</html>
