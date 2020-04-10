@@ -1,20 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta charset="UTF-8">
 <title>ex02</title>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <script type="text/javascript" src="jquery/jquery-3.4.1.js"></script>
 <script>
+//jQuery는 DOM의 엘리멘트를 선택하는 작업을 먼저 보통 하기 때문에
+//DOM이 로딩된 이후에 보통 선택작업을 하여야 한다.
 
 var $obj1 = jQuery('#header');
 console.log("o1: "+$obj1.length);
-// 위 구문은 DOM이 완성되기 전에 실행하여 객체를 찾지 못한다...
+// 위 구문은 DOM이 로당되기 전에 실행하여  DOM의 엘리멘트를 찾지 못한다...
 
+// 1. DOM 로딩 완료 시점: DOM API를 사용
 window.addEventListener('load',function(){
 	var $obj = jQuery('#header');
 	console.log($obj.length);
 });
 
+//1. DOM 로딩 완료 시점: jQuery의 document 객체를 선택하고 ready 함수 사용 
 jQuery(document).ready(function(){
 	var $obj = jQuery('#header');
 	console.log($obj.length);
@@ -23,15 +27,16 @@ jQuery(document).ready(function(){
 $(document).ready(function(){
 	var $obj = $('#header');
 	console.log($obj.length);
-});
+}); 
 
-/* 추천: 대체적으로, jQuery를 사용하는 JavaScript 코드는 이 함수가 entry point가 된다. */
-/* 해당 구문을 아래처럼 2구문으로 분리할 수 있다.
+// 추천: 
+//   대체적으로, jQuery를 사용하는 JavaScript 코드는 이 함수가 entry point가 된다.
+// docuemnt와 ready 함수를 생략하고 시작함수만 $()안에 넣는다.
 $(function(){
 	var $obj = jQuery('#header');
 	console.log($obj.length);
 });
- */
+/* 위의 구문을 아래처럼 2구문으로 분리할 수 있다.
 var selectHeader = function(){
 	var $obj = $('#header');
 	console.log($obj.length);
@@ -40,6 +45,7 @@ var selectHeader = function(){
 $(function(){
 	selectHeader();
 });
+*/
 
 </script>
 </head>
@@ -54,4 +60,3 @@ var $obj2 = jQuery('#header');
 console.log("o2: "+$obj2.length);
 </script>
 </html>
- 

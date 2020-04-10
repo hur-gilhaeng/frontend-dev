@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>ex26</title>
+<script type="text/javascript" src="jquery/jquery-3.4.1.js"></script>
+<script type="text/javascript">
+$(function(){
+	setTimeout(function(){
+		$('#h1'/*움직일 객체*/).insertBefore('#p1'/*타깃이 되는 객체*/); // 타깃 앞으로 옮기기
+	}, 2000);
+});
+</script>
+</head>
+<body>
+	<p id='p1'>내용입니다.</p>
+	<h1 id='h1'>타이틀 입니다.</h1>
+</body>
+</html>
