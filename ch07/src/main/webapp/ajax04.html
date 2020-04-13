@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>ajax04</title>
+<script type="text/javascript" src="jquery/jquery-3.4.1.js"></script>
+<script type="text/javascript">
+
+/* var loginInfo = {
+	email: $("input[name='email']").value;
+	pwd: $("input[name='pwd']").value;
+} */
+
+$(function(){
+	$("button").click(function(){
+		$.ajax({
+			url: 'http://127.0.0.1:8080/ch07/data.json',
+			async: true,
+			type: 'get',
+			// contentType: 'application/json', // 보낼때 사용..
+			// data: json.stringify(loginInfo),
+			data: '',
+			dataType: 'json',
+			success: function(response){
+				console.log(response.result+":"+response.data);
+			},
+			error: function(XHR, status, e){
+				console.error(ststus+":"+e);
+			}
+		});
+	});
+});
+</script>
+</head>
+<body>
+	<button>JSON 가져오기</button>
+</body>
+</html>
